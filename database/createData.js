@@ -25,3 +25,5 @@ fs.writeFile('data.csv', formattedData, (err) => {
 // createData()
 
 module.exports = globalLength;
+
+

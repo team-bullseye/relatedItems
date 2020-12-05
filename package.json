@@ -11,7 +11,9 @@
     "dev": "npm run start & npm run build",
     "createData": "node database/createData.js",
     "importData": "node database/importScript.js",
-    "importPostgresData": "psql -U postgres < database/postgresSeed.sql"
+    "connectPostgres": "node database/postgresIndex.js",
+    "importPostgresData": "psql -U postgres < database/postgresSeed.sql",
+    "startPostgresServer": "nodemon server/postgresServer.js"
   },
   "repository": {
     "type": "git",

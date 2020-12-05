@@ -1,14 +1,9 @@
 const { Pool, Client } = require('pg')
 
-// const connectionString = 'postgresql://postgres:root@database.server.com:5432/sdc'
-// const pool = new Pool({
-//   connectionString,
-// })
-
 const client = new Client({
 user: 'postgres',
 host: 'localhost',
-database: 'sdc',
+database: 'relateditems',
 password: 'root',
 port: 5432
 });
@@ -17,7 +12,7 @@ client.connect((err, session) => {
   if (err) {
     console.log(err)
   } else {
-    console.log('client connected at port 5432')
+    console.log('postgres connected at port 5432')
   }
 })
 
