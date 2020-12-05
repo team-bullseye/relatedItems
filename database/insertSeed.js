@@ -3,6 +3,8 @@ const mongoose = require('mongoose')
 const Game = require('./Game');
 const gameData = require('./seed.json');
 
+// previous seed script
+
 const seedData = (data) => {
   Game.deleteMany({})
     .then((res) => {
@@ -18,4 +20,4 @@ const seedData = (data) => {
     })
 };
 
-seedData(gameData);
+// seedData(gameData);

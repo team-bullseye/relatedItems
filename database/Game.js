@@ -5,7 +5,8 @@ const gameSchema = new mongoose.Schema({
   imgUrl: String,
   item: String,
   price: Number,
-  system: String
+  system: String,
+  index: Number
 });
 
 const Game = mongoose.model('Game', gameSchema);

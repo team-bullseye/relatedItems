@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node database/insertSeed.js && nodemon -L server/server.js",
+    "start": "nodemon server/server.js",
     "build": "webpack -d inline-source-map -w",
     "seed": "node database/insertSeed.js",
     "dev": "npm run start & npm run build",
-    "data": "node database/createData.js"
+    "createData": "node database/createData.js",
+    "importData": "node database/importScript.js",
+    "importPostgresData": "psql -U postgres < database/postgresSeed.sql"
   },
   "repository": {
     "type": "git",
@@ -30,6 +32,8 @@
     "faker": "^5.1.0",
     "mongoose": "^5.10.13",
     "morgan": "^1.10.0",
+    "pg": "^8.5.1",
+    "postgres": "^1.0.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
