@@ -91,7 +91,8 @@ class Together extends React.Component {
           <div>
             <div style={gameStyle}>
               <div>
-                <img src={this.props.games[0].imgUrl} style={{ width: "100%" }} />
+                {console.log('games:', this.props.games[0])}
+                <img src={this.props.games[0].imgurl} style={{ width: "100%" }} />
               </div>
               <p style={{ fontWeight: "bold", textAlign: "center" }}>{this.props.games[0].price}</p>
               <p style={nameStyle}>{this.props.games[0].item}</p>
@@ -100,7 +101,7 @@ class Together extends React.Component {
             <div style={{ display: "inline-block", margin: "0px 10px", transform: "translate(0px, -150px)", fontSize: "36px" }}>&#43;</div>
             <div style={gameStyle}>
               <div>
-                <img src={this.props.games[1].imgUrl} style={{ width: "100%" }} />
+                <img src={this.props.games[1].imgurl} style={{ width: "100%" }} />
               </div>
               <p style={{ fontWeight: "bold", textAlign: "center" }}>{this.props.games[1].price}</p>
               <p style={nameStyle}>{this.props.games[1].item}</p>
@@ -109,7 +110,7 @@ class Together extends React.Component {
             <div style={{ display: "inline-block", margin: "0px 10px", transform: "translate(0px, -150px)", fontSize: "36px" }} >&#43;</div>
             <div style={gameStyle}>
               <div>
-                <img src={this.props.games[2].imgUrl} style={{ width: "100%" }} />
+                <img src={this.props.games[2].imgurl} style={{ width: "100%" }} />
               </div>
               <p style={{ fontWeight: "bold", textAlign: "center" }}>{this.props.games[2].price}</p>
               <p style={nameStyle}>{this.props.games[2].item}</p>
