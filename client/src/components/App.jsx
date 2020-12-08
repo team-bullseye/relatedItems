@@ -21,6 +21,7 @@ class App extends React.Component {
   getInitalGame() {
     axios.get('/api/games/one')
       .then((res) => {
+        console.log('res', res.data)
         this.getSimilarGames(res.data.rows[0].system);
         this.getTogetherGames(res.data.rows[0].system);
       })
@@ -45,6 +46,7 @@ class App extends React.Component {
   getTogetherGames(system) {
     axios.get(`/api/games/${system}/together`)
       .then((res) => {
+        console.log('together games', res.data)
         this.setState({
           togetherGames: res.data
         });

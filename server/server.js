@@ -50,7 +50,8 @@ server.delete('/api/games/:id', (req, res) => {
 // finds a random game in the list
 server.use('/api/games/one', (req, res) => {
   let randomIndex = Math.floor(Math.random() * globalLength);
-  Game.findOne({index: randomIndex}) // add random index in here
+  Game.findOne({index: randomIndex})
+   // add random index in here
     .then((game) => {
       res.send(game);
     })
@@ -61,9 +62,10 @@ server.use('/api/games/one', (req, res) => {
 
 
 // finds 20 similar games
-server.use('/api/games/:index/similar', (req, res) => {
-  Game.find({index: { $lte: 20 }})
+server.use('/api/games/:system/similar', (req, res) => {
+  Game.find({system: req.params.system}).limit(20)
     .then((games) => {
+      console.log(games)
       res.send(games);
     })
     .catch((err) => {
@@ -74,9 +76,8 @@ server.use('/api/games/:index/similar', (req, res) => {
 
 
 //produces the 3 games freq bought together
-server.use('/api/games/:index/together', (req, res) => {
-  console.log(req.params.index)
-  Game.find({index: {$lte: 2}})
+server.use('/api/games/:system/together', (req, res) => {
+  Game.find({system: req.params.system}).limit(3)
     .then((games) => {
       // console.log(games)
       // return Game.find({ system: game[0].system })
