@@ -22,8 +22,8 @@ class App extends React.Component {
     axios.get('/api/games/one')
       .then((res) => {
         console.log('res', res.data)
-        this.getSimilarGames(res.data.rows[0].system);
-        this.getTogetherGames(res.data.rows[0].system);
+        this.getSimilarGames(res.data.system);
+        this.getTogetherGames(res.data.system);
       })
       .catch((err) => {
         console.error(err);

@@ -1,3 +1,4 @@
+require('newrelic')
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
@@ -9,7 +10,7 @@ const globalLength = require('../database/createData.js')
 
 require('../database');
 
-server.use(morgan('dev'));
+// server.use(morgan('dev'));
 server.use(bodyParser.json());
 server.use(express.static(path.join(__dirname, '../client/dist')));
 
@@ -23,7 +24,7 @@ server.get('/api/games/one', (req, res) => {
     if (err) {
       console.log(err)
     } else {
-      res.send(result)
+      res.send(result.rows[0])
     }
   })
 })
