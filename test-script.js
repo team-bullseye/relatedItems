@@ -157,15 +157,15 @@ import http from 'k6/http';
 
 export let options = {
 	stages: [
-    { duration: '5s', target: 200 },
-    { duration: '20s', target: 200 },
+    { duration: '5s', target: 250 },
+    { duration: '20s', target: 500 },
     { duration: '5s', target: 1 },
   ],
 };
 
 export default function () {
-	http.get('http://localhost:3000/api/games/one')
-	// sleep(.)
+	http.get('http://localhost:3004/api/games/one')
+	// sleep(.5)
 }
 
 

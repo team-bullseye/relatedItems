@@ -2,7 +2,7 @@ const { Pool, Client } = require('pg')
 
 const client = new Client({
 user: 'postgres',
-host: 'localhost',
+host: '3.17.203.166',
 database: 'relateditems',
 password: 'root',
 port: 5432
@@ -12,7 +12,7 @@ client.connect((err, session) => {
   if (err) {
     console.log(err)
   } else {
-    console.log('postgres connected at port 5432')
+    // console.log('postgres connected at port 5432')
   }
 })
 
@@ -27,3 +27,9 @@ client.connect((err, session) => {
 // })
 
 module.exports = client;
+
+
+
+
+// command to get into ec2 postgres shell
+// psql -h 3.17.203.166 -d relateditems -U postgres
