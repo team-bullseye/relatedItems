@@ -2,7 +2,7 @@ const { Pool, Client } = require('pg')
 
 const client = new Client({
 user: 'postgres',
-host: '3.17.203.166',
+host: '13.52.248.49',
 database: 'relateditems',
 password: 'root',
 port: 5432
@@ -31,5 +31,5 @@ module.exports = client;
 
 
 
-// command to get into ec2 postgres shell
+// command to get into ec2 postgres shell linux
 // psql -h 3.17.203.166 -d relateditems -U postgres
